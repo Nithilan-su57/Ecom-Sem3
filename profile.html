@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Profile · CartLedger</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Cart<span>Ledger</span></div>
+  <nav>
+    <a id="back-link" href="shop.html">&larr; Back</a>
+    <a href="#" onclick="logout()">Log out</a>
+  </nav>
+</div>
+
+<div class="page" style="max-width:640px;">
+
+  <div class="card profile-hero">
+    <div class="avatar" id="pf-avatar"></div>
+    <div>
+      <h2 style="margin-bottom:4px;" id="pf-display-name">&nbsp;</h2>
+      <span class="badge" id="pf-role-badge"></span>
+      <p class="muted" style="margin:6px 0 0;" id="pf-display-email"></p>
+    </div>
+  </div>
+
+  <div class="card" style="margin-top:18px;">
+    <form id="profile-form">
+      <h3 style="margin-bottom:2px;">Account details</h3>
+      <p class="muted" style="margin-top:0;">Update your name and email address.</p>
+      <label for="pf-name">Full name</label>
+      <input id="pf-name" type="text" required>
+      <label for="pf-email">Email</label>
+      <input id="pf-email" type="email" required>
+
+      <hr style="border:none;border-top:1px solid var(--line);margin:24px 0;">
+
+      <h3 style="margin-bottom:2px;">Change password</h3>
+      <p class="muted" style="margin-top:0;">Leave blank to keep your current password.</p>
+      <label for="pf-current-pass">Current password</label>
+      <input id="pf-current-pass" type="password" placeholder="Required to set a new password">
+      <label for="pf-new-pass">New password</label>
+      <input id="pf-new-pass" type="password" minlength="6" placeholder="At least 6 characters">
+
+      <div class="form-error" id="profile-error"></div>
+      <button class="btn" style="width:100%;margin-top:18px;">Save changes</button>
+    </form>
+  </div>
+
+</div>
+<script src="js/script.js"></script>
+<script>initProfilePage();</script>
+</body>
+</html>
