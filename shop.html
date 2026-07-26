@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Shop · CartLedger</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Cart<span>Ledger</span></div>
+  <nav>
+    <a href="shop.html" class="active">Shop</a>
+    <a href="checkout.html">Cart & Orders</a>
+    <span class="cart-pill"><span id="cart-count">0</span> in cart</span>
+    <a href="#" onclick="logout()">Log out (<span id="who"></span>)</a>
+  </nav>
+</div>
+
+<div class="page">
+  <h2>Browse products</h2>
+  <p class="muted">Filter by category and add items to your cart.</p>
+  <div class="filters" id="filters"></div>
+  <div class="grid products" id="products"></div>
+</div>
+
+<script src="js/script.js"></script>
+<script>initShopPage();</script>
+</body>
+</html>
