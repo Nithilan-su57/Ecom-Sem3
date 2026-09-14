@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>Shop · CartLedger</title>
+<title>Product · CartLedger</title>
 <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -17,14 +17,11 @@
   </nav>
 </div>
 
-<div class="page">
-  <h2>Browse products</h2>
-  <p class="muted">Filter by category and add items to your cart.</p>
-  <div class="filters" id="filters"></div>
-  <div class="grid products" id="products"></div>
+<div class="page" style="max-width:800px;">
+  <div class="card product-detail" id="product-detail"></div>
 </div>
 
 <script src="js/script.js"></script>
-<script>initShopPage();</script>
+<script>initProductPage();</script>
 </body>
 </html>
