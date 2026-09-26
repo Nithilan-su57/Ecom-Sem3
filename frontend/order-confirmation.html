@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Order Confirmed · CartLedger</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Cart<span>Ledger</span></div>
+  <nav>
+    <a href="shop.html">Shop</a>
+    <a href="checkout.html">Cart & Orders</a>
+    <span class="cart-pill"><span id="cart-count">0</span> in cart</span>
+    <a href="#" onclick="logout()">Log out (<span id="who"></span>)</a>
+  </nav>
+</div>
+
+<div class="page" style="max-width:640px;" id="confirm-body">
+  <div class="card">
+    <h2 style="color:var(--teal);" id="confirm-heading">✓ Payment successful</h2>
+    <p class="muted" id="confirm-subtext">Thanks for your order! A confirmation has been recorded below.</p>
+
+    <table style="margin:16px 0;">
+      <tbody>
+        <tr><td class="muted">Order</td><td id="confirm-order-id"></td></tr>
+        <tr><td class="muted">Date</td><td id="confirm-date"></td></tr>
+        <tr><td class="muted">Payment method</td><td id="confirm-payment-method"></td></tr>
+        <tr><td class="muted">Status</td><td id="confirm-status"></td></tr>
+        <tr><td class="muted">Total</td><td id="confirm-total"></td></tr>
+      </tbody>
+    </table>
+
+    <table>
+      <thead><tr><th>Item</th><th>Qty</th><th>Price</th><th>Line total</th></tr></thead>
+      <tbody id="confirm-items"></tbody>
+    </table>
+
+    <a class="btn" style="margin-top:20px;" href="shop.html">Continue shopping</a>
+    <a class="btn secondary" style="margin-top:20px;" href="checkout.html">View order history</a>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>initOrderConfirmationPage();</script>
+</body>
+</html>
