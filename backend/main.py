@@ -4,6 +4,7 @@ from pydantic import BaseModel, EmailStr
 from typing import List, Optional
 import sqlite3
 from datetime import datetime
+import os
 
 app = FastAPI(title="E-Commerce API")
 
@@ -276,3 +277,22 @@ def modify_order_status(order_id: int, data: OrderStatusUpdate):
     conn.commit()
     conn.close()
     return {"message": "Order status updated."}
+
+FRONTEND_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "..", "frontend"))
+
+if os.path.exists(FRONTEND_DIR):
+    # Mount static assets (CSS, JS, images)
+    app.mount("/css", StaticFiles(directory=os.path.join(FRONTEND_DIR, "css")), name="css")
+    app.mount("/js", StaticFiles(directory=os.path.join(FRONTEND_DIR, "js")), name="js")
+
+    # Serve HTML pages directly
+    @app.get("/")
+    def serve_index():
+        return FileResponse(os.path.join(FRONTEND_DIR, "index.html"))
+
+    @app.get("/{page_name}.html")
+    def serve_html_pages(page_name: str):
+        page_path = os.path.join(FRONTEND_DIR, f"{page_name}.html")
+        if os.path.exists(page_path):
+            return FileResponse(page_path)
+        raise HTTPException(status_code=404, detail="Page not found")
