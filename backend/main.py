@@ -4,9 +4,13 @@ from pydantic import BaseModel, EmailStr
 from typing import List, Optional
 import sqlite3
 from datetime import datetime
+from fastapi.staticfiles import StaticFiles
+from fastapi.responses import FileResponse
 import os
 
 app = FastAPI(title="E-Commerce API")
+
+
 
 # Enable CORS for frontend client calls
 app.add_middleware(
