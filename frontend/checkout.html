@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Cart & Orders · CartLedger</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div class="topbar">
+  <div class="brand">Cart<span>Ledger</span></div>
+  <nav>
+    <a href="shop.html">Shop</a>
+    <a href="checkout.html" class="active">Cart & Orders</a>
+    <span class="cart-pill"><span id="cart-count">0</span> in cart</span>
+    <a href="profile.html">Profile</a>
+    <a href="#" onclick="logout()">Log out (<span id="who"></span>)</a>
+  </nav>
+</div>
+
+<div class="page">
+  <div class="card">
+    <h2>Your cart</h2>
+    <table>
+      <thead><tr><th>Product</th><th>Price</th><th>Qty</th><th>Line total</th><th></th></tr></thead>
+      <tbody id="cart-body"></tbody>
+      <tfoot><tr class="total-row"><td colspan="3">Total</td><td id="cart-total">₹0</td><td></td></tr></tfoot>
+    </table>
+    <button class="btn" id="place-order" style="margin-top:16px;">Place order</button>
+  </div>
+
+  <div class="card" style="margin-top:24px;">
+    <h2>Order history</h2>
+    <table>
+      <thead><tr><th>Order</th><th>Date</th><th>Total</th><th>Status</th></tr></thead>
+      <tbody id="order-history"></tbody>
+    </table>
+  </div>
+</div>
+
+<script src="js/script.js"></script>
+<script>initCheckoutPage();</script>
+</body>
+</html>
